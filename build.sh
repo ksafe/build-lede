@@ -17,7 +17,6 @@ git_pull "https://github.com/coolsnowwolf/lede.git" "lede" "reset"
 
 mkdir -p lede/package/ksafe
 cd lede/package/ksafe
-#git_pull "https://github.com/frainzy1477/luci-app-clash.git" "luci-app-clash"
 git_pull "https://github.com/rufengsuixing/luci-app-adguardhome" "luci-app-adguardhome"
 git_pull "-b master https://github.com/vernesong/OpenClash" "OpenClash"
 rm -rf ../lean/luci-theme-argon
