@@ -19,7 +19,8 @@ mkdir -p lede/package/ksafe
 cd lede/package/ksafe
 
 # AdGuardHome
-git_pull "https://github.com/rufengsuixing/luci-app-adguardhome" "luci-app-adguardhome"
+rm -rf luci-app-adguardhome
+#git_pull "https://github.com/rufengsuixing/luci-app-adguardhome" "luci-app-adguardhome"
 
 # OpenClash
 #rm -rf OpenClash
@@ -54,6 +55,8 @@ git_pull "https://github.com/fw876/helloworld.git" "helloworld"
 cd ../..
 
 sed -i '/uci commit luci/ i uci set luci.main.mediaurlbase=''\/luci-static\/argon''' package/lean/default-settings/files/zzz-default-settings
+sed -i 's/''OpenWrt ''/''OpenWrt_$(date '+%Y%m%d') ''/' package/lean/default-settings/files/zzz-default-settings
+
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
