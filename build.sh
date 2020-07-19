@@ -16,6 +16,8 @@ git_pull(){
 # sudo apt update
 # sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3.5 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget swig
 
+sudo pacman -Sy --needed bash bc bin86 binutils bzip2 cdrkit core/which diffutils fastjar findutils flex gawk gcc gettext git intltool libusb libxslt make ncurses openssl patch perl-extutils-makemaker pkgconf python3 rsync sharutils time unzip util-linux wget zlib
+
 git_pull "https://github.com/coolsnowwolf/lede.git" "lede" "reset"
 
 mkdir -p lede/package/ksafe
@@ -23,7 +25,7 @@ cd lede/package/ksafe
 
 # OpenClash
 #rm -rf OpenClash
-git_pull "-b master https://github.com/vernesong/OpenClash" "OpenClash"
+git_pull "-b master https://github.com/vernesong/OpenClash" "OpenClash" "reset"
 mkdir -p OpenClash/luci-app-openclash/files/etc/openclash/{core,config}
 wget -qc https://github.com/vernesong/OpenClash/releases/download/Clash/clash-linux-amd64.tar.gz -O - | tar xz -C OpenClash/luci-app-openclash/files/etc/openclash/core
 wget -qc http://clash.ksafe.cn/ksafe.yaml -P OpenClash/luci-app-openclash/files/etc/openclash/config/
