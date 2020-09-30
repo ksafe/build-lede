@@ -50,7 +50,9 @@ git_pull "-b 18.06 https://github.com/jerrykuku/luci-theme-argon.git" "luci-them
 # OpenClash
 #rm -rf OpenClash
 git_pull "-b master https://github.com/vernesong/OpenClash" "OpenClash" "reset"
-mkdir -p OpenClash/luci-app-openclash/files/etc/openclash/core OpenClash/luci-app-openclash/files/etc/openclash/config
+mkdir -p OpenClash/luci-app-openclash/files/etc/openclash/core
+mkdir -p OpenClash/luci-app-openclash/files/etc/openclash/config
+mkdir -p OpenClash/luci-app-openclash/files/etc/openclash/custom
 
 rm -rf OpenClash/luci-app-openclash/files/etc/openclash/core/clash*
 CLASH_GAME_URL=https://github.com/vernesong/OpenClash/releases/download/TUN/clash-linux-amd64.tar.gz
@@ -85,7 +87,7 @@ wget -q https://ksafe.cn/clash/ksafe.yaml -P OpenClash/luci-app-openclash/files/
 wget -q https://ksafe.cn/clash/dler-ss.yaml -P OpenClash/luci-app-openclash/files/etc/openclash/config/
 wget -q https://ksafe.cn/clash/dler-trojan.yaml -P OpenClash/luci-app-openclash/files/etc/openclash/config/
 wget -q https://ksafe.cn/clash/dler-v2ray.yaml -P OpenClash/luci-app-openclash/files/etc/openclash/config/
-wget -q https://ksafe.cn/clash/renzhe.yaml -P OpenClash/luci-app-openclash/files/etc/openclash/config/
+
 echo "
 - IP-CIDR,34.92.26.211/32,DIRECT
 - IP-CIDR,38.106.20.173/32,DIRECT
